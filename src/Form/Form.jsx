@@ -67,6 +67,7 @@ const Form = () => {
 
   const handleNameChange = (event) => {
     setName(event.target.value);
+    console.log(name);
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -111,8 +112,9 @@ const Form = () => {
     setLocationOtherTwo(event.target.value);
   };
 
-  const handleFormData = () => {
-    setData({
+  const handleFormData = (e) => {
+    e.preventDefault();
+    const data = {
       name,
       email,
       phone,
@@ -130,10 +132,9 @@ const Form = () => {
           time: timeTwo,
         },
       },
-    });
+    };
     console.log(data);
-    // https://powerful-inlet-54019.herokuapp.com/api/users
-    fetch("http://localhost:5000/api/users", {
+    fetch("https://powerful-inlet-54019.herokuapp.com/api/users", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -157,7 +158,7 @@ const Form = () => {
       <FormTitle />
       <div className="form-container">
         <div>
-          <form>
+          <form onSubmit={handleFormData}>
             <TextField
               sx={{ my: 1 }}
               type="text"
@@ -165,7 +166,7 @@ const Form = () => {
               label="Name"
               value={name}
               fullWidth
-              onChange={handleNameChange}
+              onChange={(e) => handleNameChange(e)}
             />
 
             <TextField
@@ -344,7 +345,7 @@ const Form = () => {
                 </MenuItem>
               ))}
             </TextField>
-            <Button onClick={handleFormData} variant="contained" size="large">
+            <Button type="submit" variant="contained" size="large">
               Submit
             </Button>
           </form>
