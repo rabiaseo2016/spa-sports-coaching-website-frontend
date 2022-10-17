@@ -49,6 +49,36 @@ const Slider = () => {
           {/* </section> */}
         </SwiperSlide>
         {/* Slider End */}
+        {/* Slider Start */}
+        <SwiperSlide id="slider">
+          {/* <section className="slide"> */}
+          <div id="image">
+            <img src={slider1} className="carousel" alt="slider-1" />
+          </div>
+          <div style={{ textAlign: "left" }} id="content">
+            <Typography variant="h4" sx={{ mt: 3, mb: 4 }}>
+              Wen Tianxiang
+            </Typography>
+            <Points />
+          </div>
+          {/* </section> */}
+        </SwiperSlide>
+        {/* Slider End */}
+        {/* Slider Start */}
+        <SwiperSlide id="slider">
+          {/* <section className="slide"> */}
+          <div id="image">
+            <img src={slider1} className="carousel" alt="slider-1" />
+          </div>
+          <div style={{ textAlign: "left" }} id="content">
+            <Typography variant="h4" sx={{ mt: 3, mb: 4 }}>
+              Wen Tianxiang
+            </Typography>
+            <Points />
+          </div>
+          {/* </section> */}
+        </SwiperSlide>
+        {/* Slider End */}
       </Swiper>
     </div>
   );

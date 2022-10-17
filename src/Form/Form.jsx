@@ -3,6 +3,8 @@ import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import CoachSection from "../CoachSection/CoachSection";
 import FormTitle from "../FormTitle/FormTitle";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import "./Form.css";
 
 const style = {
@@ -64,6 +66,7 @@ const Form = () => {
   const [timeTwo, setTimeTwo] = React.useState("");
   const [data, setData] = React.useState({});
   const [open, setOpen] = React.useState(false);
+  const formRef = useRef();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -149,6 +152,22 @@ const Form = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+
+    emailjs
+      .send(
+        "service_4v48w2t",
+        "template_udcygri",
+        { name: data.name, email: data.email, data },
+        "TTK0OFcTXm28HMA9Y"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   const handleClose = () => setOpen(false);
@@ -158,7 +177,7 @@ const Form = () => {
       <FormTitle />
       <div className="form-container">
         <div>
-          <form onSubmit={handleFormData}>
+          <form ref={formRef} onSubmit={handleFormData}>
             <TextField
               sx={{ my: 1 }}
               type="text"
