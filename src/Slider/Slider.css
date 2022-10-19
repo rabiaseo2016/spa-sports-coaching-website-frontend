@@ -1,0 +1,85 @@
+.swiper {
+  width: 100%;
+  height: 90vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background-image: url("../images/form-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: #1ca3ec;
+  color: snow;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.mySwiper {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 50px;
+}
+
+#slider {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+#image {
+  justify-self: end;
+  margin-right: 30px;
+}
+#content {
+  justify-self: start;
+  margin-left: 30px;
+}
+
+@media (max-width: 792px) {
+  #slider {
+    grid-template-columns: 1fr;
+  }
+  #image {
+    width: 100%;
+    justify-self: center;
+    margin-right: 0;
+    /* margin:auto; */
+  }
+  #swiper {
+    height: auto;
+    padding: 30px 0;
+  }
+  #content {
+    width: 90%;
+    margin-left: 0;
+    margin: auto;
+    justify-self: center;
+  }
+}
