@@ -21,11 +21,11 @@ const Cards = () => {
           >
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                PRIVATE CLASS ONE
+                Private Class 1 on 1
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Typography variant="h6" style={{ fontWeight: "normal" }}>
-                One coach to one student
+                Improve your skills from beginner to competitive squash
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -37,7 +37,7 @@ const Cards = () => {
             }}
             sx={{ px: 4 }}
           >
-            <Typography variant="h5">FEE: $100</Typography>
+            <Typography variant="h5">FEE: HKD$650/hr</Typography>
           </CardActions>
         </Card>
       </Grid>
@@ -51,11 +51,11 @@ const Cards = () => {
           >
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                PRIVATE CLASS TWO
+                Private Class 1 on 2
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Typography variant="h6" style={{ fontWeight: "normal" }}>
-                One coach to two students
+                Enjoy Squash with your friends!
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -67,7 +67,7 @@ const Cards = () => {
             }}
             sx={{ px: 4 }}
           >
-            <Typography variant="h5">FEE: $100</Typography>
+            <Typography variant="h5">FEE: HKD$700/hr</Typography>
           </CardActions>
         </Card>
       </Grid>
@@ -81,11 +81,11 @@ const Cards = () => {
           >
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                GROUP CLASS
+                Group Training
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Typography variant="h6" style={{ fontWeight: "normal" }}>
-                3 - 6.15 hours
+                Gather 3 - 6 friends and enjoy Squash together !
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -98,7 +98,7 @@ const Cards = () => {
             }}
             sx={{ px: 4 }}
           >
-            <Typography variant="h5">FEE: $100</Typography>
+            <Typography variant="h5">FEE: HKD$1000/1.5 hrs</Typography>
           </CardActions>
         </Card>
       </Grid>
