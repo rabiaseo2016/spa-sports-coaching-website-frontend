@@ -1,23 +1,18 @@
-import { Button, MenuItem, Modal, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  MenuItem,
+  Modal,
+  TextareaAutosize,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect } from "react";
-import CoachSection from "../CoachSection/CoachSection";
+import React from "react";
+import CircularProgress from "@mui/material/CircularProgress";
 import FormTitle from "../FormTitle/FormTitle";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import "./Form.css";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 500,
-  bgcolor: "white",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 
 const classes = [
   { label: "Private Class 1 to 1" },
@@ -44,10 +39,10 @@ const days = [
   { label: "Sunday" },
 ];
 const times = [
-  { label: "0800-1200" },
-  { label: "1200-1500" },
-  { label: "1500-1900" },
-  { label: "1900-2200" },
+  { label: "08:00-12:00" },
+  { label: "12:00-15:00" },
+  { label: "15:00-19:00" },
+  { label: "19:00-22:00" },
 ];
 
 const Form = () => {
@@ -64,8 +59,9 @@ const Form = () => {
   const [dayTwo, setDayTwo] = React.useState("");
   const [timeOne, setTimeOne] = React.useState("");
   const [timeTwo, setTimeTwo] = React.useState("");
-  const [data, setData] = React.useState({});
+  const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [comment, setComment] = React.useState("");
   const formRef = useRef();
 
   const handleNameChange = (event) => {
@@ -114,9 +110,14 @@ const Form = () => {
   const handleOtherTwoChange = (event) => {
     setLocationOtherTwo(event.target.value);
   };
+  const handleComment = (e) => {
+    setComment(e.target.value);
+  };
 
   const handleFormData = (e) => {
     e.preventDefault();
+    setOpen(true);
+    setLoading(true);
     const data = {
       name,
       email,
@@ -147,7 +148,7 @@ const Form = () => {
       .then((response) => response.json())
       .then((userData) => {
         console.log("Success:", userData);
-        setOpen(true);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -157,7 +158,7 @@ const Form = () => {
       .send(
         "service_4v48w2t",
         "template_udcygri",
-        { name: data.name, email: data.email, data },
+        { name: data.name, email: data.email, data: { ...data, comment } },
         "TTK0OFcTXm28HMA9Y"
       )
       .then(
@@ -186,6 +187,7 @@ const Form = () => {
               value={name}
               fullWidth
               onChange={(e) => handleNameChange(e)}
+              required="true"
             />
 
             <TextField
@@ -196,6 +198,7 @@ const Form = () => {
               value={email}
               fullWidth
               onChange={handleEmailChange}
+              required="true"
             />
 
             <TextField
@@ -206,6 +209,7 @@ const Form = () => {
               value={phone}
               fullWidth
               onChange={handlePhoneChange}
+              required="true"
             />
 
             <TextField
@@ -217,6 +221,7 @@ const Form = () => {
               onChange={handleClassChange}
               fullWidth
               helperText="Please select your class"
+              required="true"
             >
               {classes.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -234,6 +239,7 @@ const Form = () => {
               onChange={handleLevelChange}
               fullWidth
               helperText="Please select your level"
+              required="true"
             >
               {levels.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -252,6 +258,7 @@ const Form = () => {
               onChange={handleLocationOneChange}
               fullWidth
               helperText="Please select your location"
+              required="true"
             >
               {locations.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -268,6 +275,7 @@ const Form = () => {
                 fullWidth
                 onChange={(e) => handleOtherOneChange(e)}
                 helperText="Plase specify"
+                required="true"
               />
             )}
             <TextField
@@ -279,6 +287,7 @@ const Form = () => {
               onChange={handleDayOneChange}
               fullWidth
               helperText="Please select your date"
+              required="true"
             >
               {days.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -295,6 +304,7 @@ const Form = () => {
               onChange={handleTimeOneChange}
               fullWidth
               helperText="Please select your time"
+              required="true"
             >
               {times.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -314,6 +324,7 @@ const Form = () => {
               onChange={handleLocationTwoChange}
               fullWidth
               helperText="Please select your location"
+              required="true"
             >
               {locations.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -330,6 +341,7 @@ const Form = () => {
                 fullWidth
                 onChange={(e) => handleOtherTwoChange(e)}
                 helperText="Plase specify"
+                required="true"
               />
             )}
             <TextField
@@ -341,6 +353,7 @@ const Form = () => {
               onChange={handleDayTwoChange}
               fullWidth
               helperText="Please select your date"
+              required="true"
             >
               {days.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -357,6 +370,7 @@ const Form = () => {
               onChange={handleTimeTwoChange}
               fullWidth
               helperText="Please select your time"
+              required="true"
             >
               {times.map((option) => (
                 <MenuItem key={option.label} value={option.label}>
@@ -364,6 +378,17 @@ const Form = () => {
                 </MenuItem>
               ))}
             </TextField>
+            <TextareaAutosize
+              aria-label="minimum height"
+              minRows={3}
+              placeholder="Write your comment"
+              style={{
+                width: "97%",
+                marginBottom: "5px",
+                padding: "10px !important",
+              }}
+              onChange={handleComment}
+            />
             <Button type="submit" variant="contained" size="large">
               Submit
             </Button>
@@ -380,19 +405,38 @@ const Form = () => {
         aria-labelledby="keep-mounted-modal-title"
         aria-describedby="keep-mounted-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-            Congralutalions! &#127881;
-          </Typography>
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-            Your registration is successful
-          </Typography>
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-            We'll get in touch with you soon. Thank you.
-          </Typography>
-          <Button onClick={handleClose} sx={{ mt: 3 }} variant="contained">
-            Okay!
-          </Button>
+        <Box id="modal-box">
+          {loading ? (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <CircularProgress color="primary" sx={{ mr: 2 }} />
+              Your request is processing
+            </Box>
+          ) : (
+            <>
+              <Typography
+                id="keep-mounted-modal-title"
+                variant="h6"
+                component="h2"
+              >
+                Congralutalions! &#127881;
+              </Typography>
+              <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+                Your registration is successful
+              </Typography>
+              <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+                We'll get in touch with you soon. Thank you.
+              </Typography>
+              <Button onClick={handleClose} sx={{ mt: 3 }} variant="contained">
+                Okay!
+              </Button>
+            </>
+          )}
         </Box>
       </Modal>
 
