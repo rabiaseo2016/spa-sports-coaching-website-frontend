@@ -6,7 +6,7 @@ const FormTitle = () => {
     <div style={{ margin: "10px 0 30px 0" }}>
       <Divider />
       <Typography variant="h4" sx={{ py: 4 }}>
-        REGISTER YOUR LESSON NOW
+        REGISTER NOW!
       </Typography>
       <Divider />
     </div>
