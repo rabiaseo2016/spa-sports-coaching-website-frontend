@@ -17,25 +17,25 @@ export default function Points() {
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary="Over 10 Years of coaching experience" />
           </ListItemButton>
         </ListItem>
         <Divider />
         <ListItem disablePadding>
           <ListItemButton component="a" href="#simple-list">
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary="Current Division 2 players - 4 times league champion" />
           </ListItemButton>
         </ListItem>
         <Divider />
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary="Former HK Team representative" />
           </ListItemButton>
         </ListItem>
         <Divider />
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary="3 times University Champion and 1 MVP" />
           </ListItemButton>
         </ListItem>
         <Divider />
