@@ -6,6 +6,7 @@ import Slider from "./Slider/Slider";
 import Form from "./Form/Form";
 import FormContainer from "./FormContainer/FormContainer";
 import Courses from "./Courses/Courses";
+import Footer from "./Footer/Footer";
 
 const theme = createTheme({
   typography: {
@@ -22,6 +23,7 @@ function App() {
         <Slider />
         <Courses />
         <FormContainer />
+        <Footer />
       </div>
     </ThemeProvider>
   );

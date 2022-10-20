@@ -378,14 +378,17 @@ const Form = () => {
                 </MenuItem>
               ))}
             </TextField>
+            <Typography variant="body1" sx={{ mt: 3, mb: 2 }}>
+              Write your comment:
+            </Typography>
             <TextareaAutosize
               aria-label="minimum height"
-              minRows={3}
-              placeholder="Write your comment"
+              minRows={5}
+              placeholder="Please write here ...."
               style={{
-                width: "97%",
+                width: "98%",
                 marginBottom: "5px",
-                padding: "10px !important",
+                padding: "15px !important",
               }}
               onChange={handleComment}
             />
