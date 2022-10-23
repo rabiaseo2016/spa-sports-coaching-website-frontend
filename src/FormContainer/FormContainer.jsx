@@ -5,7 +5,7 @@ import "./FormContainer.css";
 
 const FormContainer = () => {
   return (
-    <div className="form">
+    <div className="form" id="register">
       <Container sx={{ py: 8 }}>
         <Form />
       </Container>

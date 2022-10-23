@@ -34,51 +34,67 @@ const Slider = () => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {/* Slider Start */}
+        {/* Slider One Start */}
         <SwiperSlide id="slider">
-          {/* <section className="slide"> */}
           <div id="image">
             <img src={slider1} className="carousel" alt="slider-1" />
           </div>
-          <div style={{ textAlign: "left" }} id="content">
+          <Box
+            sx={{
+              textAlign: { md: "left", sm: "center" },
+              paddingRight: { md: 5, sm: 0 },
+            }}
+            id="content"
+          >
             <Typography variant="h4" sx={{ mt: 3, mb: 4 }}>
               Wen Tianxiang
             </Typography>
             <Points />
-          </div>
-          {/* </section> */}
+          </Box>
         </SwiperSlide>
-        {/* Slider End */}
-        {/* Slider Start */}
+        {/* Slider One End */}
+
+        {/* Slider Two Start */}
         <SwiperSlide id="slider">
           {/* <section className="slide"> */}
           <div id="image">
-            <img src={slider1} className="carousel" alt="slider-1" />
+            <img src={slider2} className="carousel" alt="slider-1" />
           </div>
-          <div style={{ textAlign: "left" }} id="content">
+          <Box
+            sx={{
+              textAlign: { md: "left", sm: "center" },
+              paddingRight: { md: 5, sm: 0 },
+            }}
+            id="content"
+          >
             <Typography variant="h4" sx={{ mt: 3, mb: 4 }}>
               Wen Tianxiang
             </Typography>
             <Points />
-          </div>
-          {/* </section> */}
+          </Box>
         </SwiperSlide>
-        {/* Slider End */}
-        {/* Slider Start */}
+        {/* Slider Two End */}
+
+        {/* Slider Three Start */}
         <SwiperSlide id="slider">
           {/* <section className="slide"> */}
           <div id="image">
-            <img src={slider1} className="carousel" alt="slider-1" />
+            <img src={slider3} className="carousel" alt="slider-1" />
           </div>
-          <div style={{ textAlign: "left" }} id="content">
+          <Box
+            sx={{
+              textAlign: { md: "left", sm: "center" },
+              paddingRight: { md: 5, sm: 0 },
+            }}
+            id="content"
+          >
             <Typography variant="h4" sx={{ mt: 3, mb: 4 }}>
               Wen Tianxiang
             </Typography>
             <Points />
-          </div>
-          {/* </section> */}
+          </Box>
         </SwiperSlide>
-        {/* Slider End */}
+        {/* Slider Three End */}
       </Swiper>
     </div>
   );
