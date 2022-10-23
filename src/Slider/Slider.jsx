@@ -1,23 +1,19 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "./Slider.css";
+import { Navigation } from "swiper";
+import { Box } from "@mui/system";
+import { Container, Divider, Typography } from "@mui/material";
+import Points from "../CoachSection/Points";
+
+// import images
 import slider1 from "../images/slider-2.jpg";
 import slider2 from "../images/slider-1jpg.jpg";
 import slider3 from "../images/slider-3.jpg";
 
-import "./Slider.css";
-
-// import required modules
-import { Navigation } from "swiper";
-import { Box } from "@mui/system";
-import { Button, Container, Divider, Typography } from "@mui/material";
-import Points from "../CoachSection/Points";
-
-// coach profile points
+// coach profile
 const coachData = [
   {
     name: "Wen Tianxiang",
@@ -61,6 +57,8 @@ const Slider = () => {
         </Typography>
         <Divider />
       </Container>
+
+      {/* Slider */}
       <Swiper
         id="swiper"
         rewind={true}
@@ -70,9 +68,11 @@ const Slider = () => {
       >
         {coachData.map((coach, idx) => (
           <SwiperSlide key={idx} id="slider">
+            {/* coach image */}
             <div id="image">
               <img src={coach.image} className="carousel" alt="slider-1" />
             </div>
+            {/* coach profile */}
             <Box
               sx={{
                 textAlign: { md: "left", sm: "center" },
@@ -80,9 +80,11 @@ const Slider = () => {
               }}
               id="content"
             >
+              {/* coach name */}
               <Typography variant="h4" sx={{ mt: 3, mb: 4 }}>
                 {coach.name}
               </Typography>
+              {/* coach description */}
               <Points
                 point1={coach.profile.point1}
                 point2={coach.profile.point2}
@@ -92,8 +94,6 @@ const Slider = () => {
             </Box>
           </SwiperSlide>
         ))}
-
-        {/* Slider Three End */}
       </Swiper>
     </div>
   );
