@@ -37,28 +37,16 @@ const NavBar = () => {
               style={{ height: 50, width: 50, borderRadius: "50%" }}
             />
           </Box>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            SQUASH
-          </Typography> */}
           {/* LOGO Area */}
 
           {/* Menu */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -84,11 +72,14 @@ const NavBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: {
+                  xs: "block",
+                  md: "none",
+                },
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
+                <Typography textAlign="right">
                   <a
                     href="#register"
                     style={{ color: "inherit", textDecoration: "none" }}
@@ -102,21 +93,8 @@ const NavBar = () => {
 
           {/* Responsive Logo */}
 
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <img
-              src={logo}
-              alt="logo"
-              style={{ height: 50, width: 50, borderRadius: "50%" }}
-            />
-          </Box>
-
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
+          <Box
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
@@ -126,14 +104,20 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            SQUASH
-          </Typography> */}
-          {/* Responsive Logo */}
+            <img
+              src={logo}
+              alt="logo"
+              style={{ height: 50, width: 50, borderRadius: "50%" }}
+            />
+          </Box>
 
-          <Box sx={{ flexGrow: 1, justifySelf: "flex-end" }}>
+          <Box sx={{ flexGrow: 0 }}>
             <Box
               sx={{
-                display: { xs: "none", md: "flex" },
+                display: {
+                  xs: "none",
+                  md: "flex",
+                },
               }}
             >
               <Button
