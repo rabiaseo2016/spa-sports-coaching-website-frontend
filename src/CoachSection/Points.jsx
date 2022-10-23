@@ -9,7 +9,7 @@ import Divider from "@mui/material/Divider";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
-export default function Points() {
+export default function Points({ point1, point2, point3, point4 }) {
   return (
     <Box sx={{ width: "100%", mb: 5 }}>
       <Divider />
@@ -17,25 +17,25 @@ export default function Points() {
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary={point1} />
           </ListItemButton>
         </ListItem>
         <Divider />
         <ListItem disablePadding>
           <ListItemButton component="a" href="#simple-list">
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary={point2} />
           </ListItemButton>
         </ListItem>
         <Divider />
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary={point3} />
           </ListItemButton>
         </ListItem>
         <Divider />
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," />
+            <ListItemText primary={point4} />
           </ListItemButton>
         </ListItem>
         <Divider />
