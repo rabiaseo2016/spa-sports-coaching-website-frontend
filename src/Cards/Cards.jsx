@@ -31,7 +31,7 @@ const Cards = () => {
           </CardActionArea>
           <CardActions
             style={{
-              backgroundColor: "#1ca3ec",
+              backgroundColor: "#1976D2",
               fontWeight: "bold",
               color: "whitesmoke",
             }}
@@ -42,6 +42,7 @@ const Cards = () => {
         </Card>
       </Grid>
       {/* GRID ITEM END */}
+
       {/* GRID ITEM START */}
       <Grid item xs={12} md={4}>
         <Card>
@@ -61,7 +62,7 @@ const Cards = () => {
           </CardActionArea>
           <CardActions
             style={{
-              backgroundColor: "#1ca3ec",
+              backgroundColor: "#1976D2",
               fontWeight: "bold",
               color: "whitesmoke",
             }}
@@ -72,6 +73,7 @@ const Cards = () => {
         </Card>
       </Grid>
       {/* GRID ITEM END */}
+
       {/* GRID ITEM START */}
       <Grid item xs={12} md={4}>
         <Card>
@@ -92,7 +94,7 @@ const Cards = () => {
 
           <CardActions
             style={{
-              backgroundColor: "#1ca3ec",
+              backgroundColor: "#1976D2",
               fontWeight: "bold",
               color: "whitesmoke",
             }}

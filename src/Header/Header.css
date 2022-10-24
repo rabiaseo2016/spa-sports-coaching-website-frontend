@@ -9,12 +9,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -250px;
-  min-height: 200px;
+  min-height: 300px;
 }
+
+.header_text {
+  text-align: center;
+}
+
 .overlay {
   background-color: #1ca3ec;
   opacity: 0.8;
-  height: 200px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,5 +53,11 @@
   .header {
     height: auto;
     padding: 20px 0;
+  }
+  .overlay {
+    height: 100%;
+  }
+  #header_text {
+    text-align: left;
   }
 }
