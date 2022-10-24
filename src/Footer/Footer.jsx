@@ -8,10 +8,10 @@ export default function Footer() {
         padding: "30px",
         backgroundColor: "#1976D2",
         color: "whitesmoke",
-        textTransform: "uppercase",
+        /*textTransform: "uppercase",*/
       }}
     >
-      <Typography variant="body1">&copy; Squash Journey || 2022</Typography>
+      <Typography variant="body1">&copy; Sportverse Limited 2022</Typography>
     </div>
   );
 }
