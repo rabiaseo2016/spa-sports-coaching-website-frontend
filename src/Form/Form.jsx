@@ -379,12 +379,12 @@ const Form = () => {
               ))}
             </TextField>
             <Typography variant="body1" sx={{ mt: 3, mb: 2 }}>
-              Write your comment:
+              Special Request:
             </Typography>
             <TextareaAutosize
               aria-label="minimum height"
               minRows={5}
-              placeholder="Please write here ...."
+              placeholder="Special Request"
               style={{
                 width: "98%",
                 marginBottom: "5px",

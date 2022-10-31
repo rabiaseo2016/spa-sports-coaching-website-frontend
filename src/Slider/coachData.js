@@ -1,31 +1,31 @@
 // import images
-import slider1 from "../images/slider-2.jpg";
-import slider2 from "../images/slider-1jpg.jpg";
+import slider1 from "../images/slider-1.jpg";
+import slider2 from "../images/slider-2.jpg";
 import slider3 from "../images/slider-3.jpg";
 
 // coach profile
 const coachData = [
   {
-    name: "Wen Tianxiang",
+    name: "Vincent Wong",
     image: slider1,
     profile: {
-      point1: "Ipsum has been the industry's standard dummy text ever",
-      point2: "To be able to teach effectively, the coach must have",
-      point3: "Displays Commitment and Clear Passion for the Sport",
-      point4: "Leads by Example with very High Attitude to Hard Work",
+      point1: "10+ Years coaching experience",
+      point2: "Hong Kong Regional Squad Head Coach",
+      point3: "Current Division 2 players - 4x league champion",
+      point4: "Former HK Junior Squard Player",
     },
   },
   {
-    name: "Wen Tianxiang",
+    name: "Hugo Ho",
     image: slider2,
     profile: {
-      point1: "Understands the Sport and Leads by Example",
-      point2: "Sponge for Knowledge / Profound Thinker / Visionary",
-      point3: "Shares the Knowledge / Educates Others",
-      point4: "Highly Energised and a Motivator",
+      point1: "10+ Years coaching experience",
+      point2: "Current Division 2 players - 4 times league champion",
+      point3: "Former HK Team representative",
+      point4: "3x University Champion and 1x MVP",
     },
   },
-  {
+  /*{
     name: "Wen Tianxiang",
     image: slider3,
     profile: {
@@ -34,7 +34,7 @@ const coachData = [
       point3: "Is a Good Listener",
       point4: "Is Disciplined, Strong in Character and Integrity",
     },
-  },
+  },*/
 ];
 
 export default coachData;
