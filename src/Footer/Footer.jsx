@@ -6,7 +6,7 @@ export default function Footer() {
     <div
       style={{
         padding: "30px",
-        backgroundColor: "#1976D2",
+        backgroundColor: "#304751",
         color: "whitesmoke",
         /*textTransform: "uppercase",*/
       }}

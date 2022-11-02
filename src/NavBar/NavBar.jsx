@@ -26,7 +26,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" sx={{ bgcolor: "#304751" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* LOGO Area */}
